@@ -1,0 +1,79 @@
+site_name: NioBot Uptime Kuma Plugin
+theme:
+  name: "material"
+  palette:
+    scheme: slate
+  features:
+    - content.tabs.link
+    - content.action.edit
+    - navigation.footer
+    - header.autohide
+    - search.share
+    - navigation.instant
+    - navigation.tracking
+markdown_extensions:
+  - admonition
+  - def_list
+  - attr_list
+  - md_in_html
+  - abbr
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+repo_url: https://github.com/nexy7574/niobot
+edit_uri: edit/master/docs/
+plugins:
+  - search
+  - autorefs
+  - glightbox
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            annotations_path: brief
+            docstring_style: sphinx
+#            show_source: false
+            load_external_modules: true
+            members_order: source
+            show_submodules: true
+            signature_crossrefs: true
+            show_signature_annotations: true
+            heading_level: 3
+            line_length: 60
+            separate_signature: true
+            allow_inspection: true
+            show_signature: true
+          import:
+            - https://docs.python.org/3/objects.inv
+            - https://matrix-nio.readthedocs.io/en/latest/objects.inv
+            - https://docs.aiohttp.org/en/stable/objects.inv
+            - https://pillow.readthedocs.io/en/stable/objects.inv
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+      type: datetime
+#  - mkdocstrings:
+#      handlers:
+#        python:
+#          options:
+#            members_order: source
+#            docstring_style: sphinx
+extra:
+  social:
+    - icon: simple/matrix
+      link: https://matrix.to/#/#niobot:nexy7574.co.uk
+

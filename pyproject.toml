@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "niobot-uptime-kuma"
+description = "A plugin for nio-bot to integrate uptime kuma monitoring."
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.9"
+license = { text = "GNU GPLv3" }
+authors = [
+    {name = "Nexus", email = "pip@nexy7574.co.uk"}
+]
+dynamic = ["version"]
+dependencies = [
+    "nio-bot>=1.0.2,<2.0.0",
+    "httpx>=0.24.0"
+]
+
+[project.urls]
+Source = "https://github.com/nexy7574/niobot-uptime-kuma"
+Tracker = "https://github.com/nexy7574/niobot-uptime-kuma/issues"
+"Matrix Room" = "https://matrix.to/#/#niobot:nexy7574.co.uk"
+Funding = "https://ko-fi.com/nexy7574"
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs",
+    "mkdocs-material",
+    "black",
+    "mkdocs-glightbox",
+    "mkdocstrings[python]",
+    "mkdocs-git-revision-date-localized-plugin",
+    "mkdocs-autorefs"
+]
+
+[tool.setuptools_scm]
+write_to = "src/niobot/utils/uptime_kuma/__version__.py"
+
+[tool.black]
+line-length = 120
+target-versions = ["py39", "py310", "py311"]
+include = './src/niobot/utils/uptime_kuma.py'
+
+[tool.isort]
+profile = "black"
+src_paths = ["src/niobot/utils/uptime_kuma.py"]
